@@ -3,8 +3,8 @@ import { TypographyStyleOptions } from '@mui/material/styles/createTypography';
 
 export const CONTAINER_WIDTH = 1260;
 export const SPACER = 5;
-export const HEADER_HEIGHT = '9rem';
-export const HEADER_HEIGHT_MD = '8rem';
+export const HEADER_HEIGHT = '4rem';
+export const HEADER_HEIGHT_MD = '6rem';
 
 interface ColorConfigInterface {
   headlineColor: string;
@@ -69,7 +69,7 @@ export const getColorConfigFromPalette = (palette: string): ColorConfigInterface
 const colorfulTheme = createTheme({
   spacing: SPACER,
   typography: {
-    fontFamily: `'Red Hat Display', sans-serif`,
+    fontFamily: `'Space Grotesk', sans-serif`,
     htmlFontSize: 10,
     caption: {
       fontSize: '1.5rem',
@@ -208,10 +208,10 @@ const colorfulTheme = createTheme({
           '#__next': {
             display: 'flex',
             flexDirection: 'column',
-          }
+          },
         },
-      }
-    }
+      },
+    },
   },
 });
 

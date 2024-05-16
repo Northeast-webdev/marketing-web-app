@@ -10,9 +10,9 @@ import { HEADER_HEIGHT, HEADER_HEIGHT_MD, CONTAINER_WIDTH } from '@src/theme';
 
 const useStyles = makeStyles((theme: Theme) => ({
   appbar: {
-    boxShadow: '0 2px 6px #00000021',
+    boxShadow: '0 4px 12px #00000022',
   },
-  toolbar: {
+  toolbarCustom: {
     height: HEADER_HEIGHT_MD,
     [theme.breakpoints.up('md')]: {
       height: HEADER_HEIGHT,
@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   corporateLogo: {
     display: 'block',
     height: 'auto',
-    width: '113px',
+    width: '100px',
   },
 }));
 
@@ -77,14 +77,15 @@ export const Header = (props: HeaderPropsInterface) => {
 
   return (
     <AppBar position="sticky" color="secondary" className={classes.appbar}>
-      <Toolbar>
+      <Toolbar className="toolbarCustom">
         <Container
           className={classes.toolbarContent}
           disableGutters
           maxWidth={false}
           style={{
             maxWidth: `${CONTAINER_WIDTH / 10}rem`,
-          }}>
+          }}
+        >
           <Link href="/" withoutMaterial title={t('common.homepage')}>
             <Logo className={classes.corporateLogo} />
           </Link>
@@ -102,7 +103,8 @@ export const Header = (props: HeaderPropsInterface) => {
             onClick={() => onMenuClick?.()}
             aria-controls="mobile-menu"
             aria-expanded={isMenuOpen}
-            aria-haspopup="dialog">
+            aria-haspopup="dialog"
+          >
             <Menu />
           </IconButton>
         </Box>
